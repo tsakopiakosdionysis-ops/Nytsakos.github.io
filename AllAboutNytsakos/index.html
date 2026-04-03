@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nytsakos Official - Link in Bio</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Official link in bio page for Nytsakos - Connect on Instagram, TikTok, Discord, and Twitch">
+    <meta name="keywords" content="Nytsakos, social media, Instagram, TikTok, Discord, Twitch, content creator">
+    <meta name="author" content="Nytsakos">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Nytsakos Official - Link in Bio">
+    <meta property="og:description" content="Connect with Nytsakos on all social media platforms">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="nt.png">
+    <meta property="og:site_name" content="Nytsakos Official">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Nytsakos Official - Link in Bio">
+    <meta name="twitter:description" content="Connect with Nytsakos on all social media platforms">
+    <meta name="twitter:image" content="nt.png">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+        @keyframes fadeIn {
+            from { 
+                opacity: 0; 
+                transform: translateY(20px); 
+            }
+            to { 
+                opacity: 1; 
+                transform: translateY(0); 
+            }
+        }
+        
+        @keyframes glow {
+            0%, 100% { 
+                box-shadow: 0 0 20px rgba(147, 51, 234, 0.3); 
+            }
+            50% { 
+                box-shadow: 0 0 30px rgba(147, 51, 234, 0.5); 
+            }
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.8s ease-out;
+        }
+        
+        .glassmorphism {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .social-button {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .social-button:hover {
+            transform: scale(1.05);
+            background: rgba(255, 255, 255, 0.08);
+        }
+        
+        .profile-glow {
+            animation: glow 3s ease-in-out infinite;
+        }
+        
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 12px 24px;
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+            border-radius: 12px;
+            font-weight: 600;
+            box-shadow: 0 10px 25px rgba(16, 185, 129, 0.3);
+            transform: translateX(400px);
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 1000;
+        }
+        
+        .notification.show {
+            transform: translateX(0);
+        }
+        
+        body {
+            background: linear-gradient(135deg, #020617 0%, #0f172a 50%, #020617 100%);
+            min-height: 100vh;
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-white overflow-x-hidden">
+    <!-- Background decoration -->
+    <div class="fixed inset-0 overflow-hidden pointer-events-none">
+        <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
+    </div>
+
+    <!-- Copy Notification -->
+    <div id="copyNotification" class="notification">
+        <div class="flex items-center space-x-2">
+            <i data-lucide="check" class="w-5 h-5"></i>
+            <span>Copied!</span>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="relative z-10 min-h-screen flex items-center justify-center px-4 py-8">
+        <div class="fade-in max-w-md w-full">
+            <!-- Profile Card -->
+            <div class="glassmorphism rounded-3xl p-8 shadow-2xl">
+                <!-- Profile Section -->
+                <div class="text-center mb-8">
+                    <div class="relative inline-block mb-6">
+                        <div class="absolute inset-0 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full blur-lg opacity-50"></div>
+                        <img 
+                            src="nt.png" 
+                            alt="Nytsakos" 
+                            class="relative w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-white/20 shadow-2xl object-cover profile-glow"
+                            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                        >
+                        <div class="w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-white/20 shadow-2xl bg-gradient-to-br from-purple-500 to-blue-500 flex items-center justify-center" style="display: none;">
+                            <i data-lucide="user" class="w-16 h-16 text-white"></i>
+                        </div>
+                    </div>
+                    
+                    <h1 class="text-3xl md:text-4xl font-bold text-white mb-2">Nytsakos</h1>
+                    <p class="text-gray-400 text-sm md:text-base">Content Creator</p>
+                </div>
+
+                <!-- Social Links -->
+                <div class="space-y-3">
+                    <!-- Instagram -->
+                    <a href="https://www.instagram.com/_.dionysis._?igsh=MXgweThmcGVmc3BkaA==" target="_blank" rel="noopener noreferrer" class="social-button glassmorphism block w-full px-6 py-4 rounded-2xl flex items-center justify-between group">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-gradient-to-br from-purple-600 to-pink-600 rounded-xl flex items-center justify-center">
+                                <i data-lucide="instagram" class="w-6 h-6 text-white"></i>
+                            </div>
+                            <span class="text-lg font-semibold">Instagram</span>
+                        </div>
+                        <i data-lucide="external-link" class="w-5 h-5 text-gray-400 group-hover:text-white transition-colors"></i>
+                    </a>
+
+                    <!-- TikTok -->
+                    <a href="https://www.tiktok.com/@nytsakos?_r=1&_t=ZN-95EiwrNfTlu" target="_blank" rel="noopener noreferrer" class="social-button glassmorphism block w-full px-6 py-4 rounded-2xl flex items-center justify-between group">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-gradient-to-br from-black to-gray-800 rounded-xl flex items-center justify-center">
+                                <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.03 1.68-.36 3.41-1.22 4.85-.77 1.33-1.96 2.36-3.36 2.92-1.42.54-3 .64-4.48.25-1.47-.38-2.79-1.3-3.69-2.5-.91-1.2-1.36-2.71-1.34-4.22.01-1.21.35-2.42 1.03-3.43.68-1.02 1.67-1.81 2.8-2.28 1.14-.48 2.4-.6 3.62-.43v4.02c-.6-.04-1.22-.01-1.78.22-.61.24-1.14.69-1.44 1.27-.25.51-.34 1.09-.28 1.65.08.66.35 1.3.82 1.77.51.52 1.23.82 1.97.87.67.04 1.36-.12 1.93-.51.53-.36.93-.92 1.1-1.54.17-.62.19-1.27.14-1.91-.06-1.34-.06-2.68-.06-4.02v-12.06c.02-.67-.01-1.35.04-2.02z"/>
+                                </svg>
+                            </div>
+                            <span class="text-lg font-semibold">TikTok</span>
+                        </div>
+                        <i data-lucide="external-link" class="w-5 h-5 text-gray-400 group-hover:text-white transition-colors"></i>
+                    </a>
+
+                    <!-- Discord -->
+                    <a href="https://discord.gg/SXwXgwnxMf" target="_blank" rel="noopener noreferrer" class="social-button glassmorphism block w-full px-6 py-4 rounded-2xl flex items-center justify-between group">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-gradient-to-br from-indigo-600 to-blue-600 rounded-xl flex items-center justify-center">
+                                <i data-lucide="message-circle" class="w-6 h-6 text-white"></i>
+                            </div>
+                            <span class="text-lg font-semibold">Discord Server</span>
+                        </div>
+                        <i data-lucide="external-link" class="w-5 h-5 text-gray-400 group-hover:text-white transition-colors"></i>
+                    </a>
+
+                    <!-- Copy Discord Tag Button -->
+                    <button onclick="copyDiscordTag()" class="social-button glassmorphism block w-full px-6 py-4 rounded-2xl flex items-center justify-between group">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-gradient-to-br from-indigo-600 to-purple-600 rounded-xl flex items-center justify-center">
+                                <i data-lucide="copy" class="w-6 h-6 text-white"></i>
+                            </div>
+                            <span class="text-lg font-semibold">Copy Discord Tag</span>
+                        </div>
+                        <i data-lucide="user-plus" class="w-5 h-5 text-gray-400 group-hover:text-white transition-colors"></i>
+                    </button>
+
+                    <!-- Twitch -->
+                    <a href="#" target="_blank" rel="noopener noreferrer" class="social-button glassmorphism block w-full px-6 py-4 rounded-2xl flex items-center justify-between group">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-gradient-to-br from-purple-600 to-purple-800 rounded-xl flex items-center justify-center">
+                                <i data-lucide="twitch" class="w-6 h-6 text-white"></i>
+                            </div>
+                            <span class="text-lg font-semibold">Twitch</span>
+                        </div>
+                        <i data-lucide="external-link" class="w-5 h-5 text-gray-400 group-hover:text-white transition-colors"></i>
+                    </a>
+                </div>
+
+                <!-- Footer -->
+                <div class="text-center mt-8 pt-6 border-t border-white/10">
+                    <p class="text-gray-500 text-sm">© 2024 Nytsakos Official</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+        
+        // Discord tag to copy (placeholder - replace with actual Discord tag)
+        const discordTag = " https://discord.gg/SXwXgwnxMf";
+        
+        // Copy Discord Tag function
+        function copyDiscordTag() {
+            navigator.clipboard.writeText(discordTag).then(() => {
+                showNotification();
+            }).catch(err => {
+                console.error('Failed to copy: ', err);
+                // Fallback for older browsers
+                const textArea = document.createElement("textarea");
+                textArea.value = discordTag;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+                showNotification();
+            });
+        }
+        
+        // Show notification function
+        function showNotification() {
+            const notification = document.getElementById('copyNotification');
+            notification.classList.add('show');
+            
+            // Re-initialize icons in notification
+            lucide.createIcons();
+            
+            setTimeout(() => {
+                notification.classList.remove('show');
+            }, 2000);
+        }
+        
+        // Add smooth scroll behavior
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Add subtle parallax effect on mouse move
+        document.addEventListener('mousemove', (e) => {
+            const x = (e.clientX - window.innerWidth / 2) / window.innerWidth;
+            const y = (e.clientY - window.innerHeight / 2) / window.innerHeight;
+            
+            const decorations = document.querySelectorAll('.fixed.inset-0 > div');
+            decorations.forEach((el, index) => {
+                const speed = (index + 1) * 2;
+                el.style.transform = `translate(${x * speed}px, ${y * speed}px)`;
+            });
+        });
+    </script>
+</body>
+</html>
