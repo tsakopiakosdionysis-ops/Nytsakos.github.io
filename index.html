@@ -28,6 +28,9 @@
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
     
@@ -107,13 +110,6 @@
         <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
     </div>
 
-    <!-- Copy Notification -->
-    <div id="copyNotification" class="notification">
-        <div class="flex items-center space-x-2">
-            <i data-lucide="check" class="w-5 h-5"></i>
-            <span>Copied!</span>
-        </div>
-    </div>
 
     <!-- Main Content -->
     <div class="relative z-10 min-h-screen flex items-center justify-center px-4 py-8">
@@ -145,7 +141,7 @@
                     <a href="https://www.instagram.com/_.dionysis._?igsh=MXgweThmcGVmc3BkaA==" target="_blank" rel="noopener noreferrer" class="social-button glassmorphism block w-full px-6 py-4 rounded-2xl flex items-center justify-between group">
                         <div class="flex items-center space-x-4">
                             <div class="w-12 h-12 bg-gradient-to-br from-purple-600 to-pink-600 rounded-xl flex items-center justify-center">
-                                <i data-lucide="instagram" class="w-6 h-6 text-white"></i>
+                                <i class="fab fa-instagram text-white text-xl"></i>
                             </div>
                             <span class="text-lg font-semibold">Instagram</span>
                         </div>
@@ -176,24 +172,13 @@
                         <i data-lucide="external-link" class="w-5 h-5 text-gray-400 group-hover:text-white transition-colors"></i>
                     </a>
 
-                    <!-- Copy Discord Tag Button -->
-                    <button onclick="copyDiscordTag()" class="social-button glassmorphism block w-full px-6 py-4 rounded-2xl flex items-center justify-between group">
+                    <!-- Email -->
+                    <a href="mailto:tsakopiakosdionysis@gmail.com" class="social-button glassmorphism block w-full px-6 py-4 rounded-2xl flex items-center justify-between group">
                         <div class="flex items-center space-x-4">
-                            <div class="w-12 h-12 bg-gradient-to-br from-indigo-600 to-purple-600 rounded-xl flex items-center justify-center">
-                                <i data-lucide="copy" class="w-6 h-6 text-white"></i>
+                            <div class="w-12 h-12 bg-gradient-to-br from-blue-600 to-cyan-600 rounded-xl flex items-center justify-center">
+                                <i class="fas fa-envelope text-white text-xl"></i>
                             </div>
-                            <span class="text-lg font-semibold">Copy Discord Tag</span>
-                        </div>
-                        <i data-lucide="user-plus" class="w-5 h-5 text-gray-400 group-hover:text-white transition-colors"></i>
-                    </button>
-
-                    <!-- Twitch -->
-                    <a href="#" target="_blank" rel="noopener noreferrer" class="social-button glassmorphism block w-full px-6 py-4 rounded-2xl flex items-center justify-between group">
-                        <div class="flex items-center space-x-4">
-                            <div class="w-12 h-12 bg-gradient-to-br from-purple-600 to-purple-800 rounded-xl flex items-center justify-center">
-                                <i data-lucide="twitch" class="w-6 h-6 text-white"></i>
-                            </div>
-                            <span class="text-lg font-semibold">Twitch</span>
+                            <span class="text-lg font-semibold">Email Me</span>
                         </div>
                         <i data-lucide="external-link" class="w-5 h-5 text-gray-400 group-hover:text-white transition-colors"></i>
                     </a>
@@ -201,7 +186,7 @@
 
                 <!-- Footer -->
                 <div class="text-center mt-8 pt-6 border-t border-white/10">
-                    <p class="text-gray-500 text-sm">© 2024 Nytsakos Official</p>
+                    <p class="text-gray-500 text-sm">© 2026 Nytsakos Official</p>
                 </div>
             </div>
         </div>
@@ -210,39 +195,6 @@
     <script>
         // Initialize Lucide icons
         lucide.createIcons();
-        
-        // Discord tag to copy (placeholder - replace with actual Discord tag)
-        const discordTag = " https://discord.gg/SXwXgwnxMf";
-        
-        // Copy Discord Tag function
-        function copyDiscordTag() {
-            navigator.clipboard.writeText(discordTag).then(() => {
-                showNotification();
-            }).catch(err => {
-                console.error('Failed to copy: ', err);
-                // Fallback for older browsers
-                const textArea = document.createElement("textarea");
-                textArea.value = discordTag;
-                document.body.appendChild(textArea);
-                textArea.select();
-                document.execCommand('copy');
-                document.body.removeChild(textArea);
-                showNotification();
-            });
-        }
-        
-        // Show notification function
-        function showNotification() {
-            const notification = document.getElementById('copyNotification');
-            notification.classList.add('show');
-            
-            // Re-initialize icons in notification
-            lucide.createIcons();
-            
-            setTimeout(() => {
-                notification.classList.remove('show');
-            }, 2000);
-        }
         
         // Add smooth scroll behavior
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
